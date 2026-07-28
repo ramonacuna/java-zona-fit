@@ -27,10 +27,10 @@ El sistema permite realizar operaciones CRUD completas en una base de datos MySQ
 
 ### Estructura de Capas (Paquetes)
 El código se organiza siguiendo el principio de separación de responsabilidades:
-* `zona_fit.conexion`: Contiene la clase [Conexion.java](file:///c:/Cursos_Undemy/Java/ZonaFit/src/main/java/zona_fit/conexion/Conexion.java) encargada de establecer el enlace con MySQL de manera centralizada.
-* `zona_fit.dominio`: Contiene la clase de entidad/POJO [Cliente.java](file:///c:/Cursos_Undemy/Java/ZonaFit/src/main/java/zona_fit/dominio/Cliente.java).
-* `zona_fit.datos`: Define la interfaz [IClienteDAO.java](file:///c:/Cursos_Undemy/Java/ZonaFit/src/main/java/zona_fit/datos/IClienteDAO.java) y su implementación concreta [ClienteDAO.java](file:///c:/Cursos_Undemy/Java/ZonaFit/src/main/java/zona_fit/datos/ClienteDAO.java), aislando las sentencias SQL (Queries, PreparedStatements) del resto del código.
-* `zona_fit.presentacion`: Contiene la clase principal [ZonaFitApp.java](file:///c:/Cursos_Undemy/Java/ZonaFit/src/main/java/zona_fit/presentacion/ZonaFitApp.java) que gestiona la lectura del teclado, el bucle del menú interactivo y la salida en consola.
+* `zona_fit.conexion`: Contiene la clase [Conexion.java](src/main/java/zona_fit/conexion/Conexion.java) encargada de establecer el enlace con MySQL de manera centralizada.
+* `zona_fit.dominio`: Contiene la clase de entidad/POJO [Cliente.java](src/main/java/zona_fit/dominio/Cliente.java).
+* `zona_fit.datos`: Define la interfaz [IClienteDAO.java](src/main/java/zona_fit/datos/IClienteDAO.java) y su implementación concreta [ClienteDAO.java](src/main/java/zona_fit/datos/ClienteDAO.java), aislando las sentencias SQL (Queries, PreparedStatements) del resto del código.
+* `zona_fit.presentacion`: Contiene la clase principal [ZonaFitApp.java](src/main/java/zona_fit/presentacion/ZonaFitApp.java) que gestiona la lectura del teclado, el bucle del menú interactivo y la salida en consola.
 
 ---
 
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS clientes (
 ```
 
 ### Configurar Credenciales
-Asegúrate de ajustar los parámetros de conexión en [Conexion.java](file:///c:/Cursos_Undemy/Java/ZonaFit/src/main/java/zona_fit/conexion/Conexion.java#L7-L18):
+Asegúrate de ajustar los parámetros de conexión en [Conexion.java](src/main/java/zona_fit/conexion/Conexion.java):
 ```java
 var baseDatos = "zona_fit_db";
 var url = "jdbc:mysql://127.0.0.1:3306/" + baseDatos;
@@ -67,4 +67,4 @@ var password = "admin";     // Cambiar por tu contraseña
 2. Asegúrate de tener configurado el JDK versión 21 o superior.
 3. Importa el proyecto como un proyecto Maven para descargar la dependencia de MySQL.
 4. Asegúrate de tener el servidor MySQL encendido con la base de datos `zona_fit_db` creada.
-5. Ejecuta la clase principal [ZonaFitApp.java](file:///c:/Cursos_Undemy/Java/ZonaFit/src/main/java/zona_fit/presentacion/ZonaFitApp.java) ejecutando el método `main`.
+5. Ejecuta la clase principal [ZonaFitApp.java](src/main/java/zona_fit/presentacion/ZonaFitApp.java) ejecutando el método `main`.
