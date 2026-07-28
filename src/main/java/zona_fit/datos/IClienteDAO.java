@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IClienteDAO {
     List<Cliente> listarClientes();
-    boolean buscarClienteById(Cliente cliente);
+    Cliente buscarClienteById(Cliente cliente);
     boolean agregarCliente(Cliente cliente);
     boolean modificarCliente(Cliente cliente);
     boolean eliminarCliente(Cliente cliente);
